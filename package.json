@@ -1,0 +1,16 @@
+{
+  "name": "winston-amqp-transport",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Vincent Poencet <vincepoencet@free.fr>",
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.5.2",
+    "winston-transport": "^3.2.1"
+  }
+}
