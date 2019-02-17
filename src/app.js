@@ -18,7 +18,7 @@ module.exports = class AMQPTransport extends Transport {
           throw err;
         }
 
-        ch.assertExchange(this.options.exchange, this.options.exchangeType, { durable: this.options.durable || 0 });
+        ch.assertExchange(this.options.exchange, this.options.exchangeType, { durable: this.options.durable || false });
         this.ch = ch;
       })
     });
