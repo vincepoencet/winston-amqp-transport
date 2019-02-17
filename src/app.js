@@ -18,7 +18,7 @@ module.exports = class AMQPTransport extends Transport {
           throw err;
         }
 
-        ch.assertExchange(this.options.exchange, this.options.exchangeType, { durable: false });
+        ch.assertExchange(this.options.exchange, this.options.exchangeType, { durable: this.options.durable || 0 });
         this.ch = ch;
       })
     });
@@ -30,7 +30,7 @@ module.exports = class AMQPTransport extends Transport {
     }
 
     this.ch.publish(this.options.exchange, `${this.options.routingKey}.logs.${info.level}`
-      , Buffer.from(JSON.stringify({...info, timespan: new Date()})))
+      , Buffer.from(JSON.stringify({...info, timespan: new Date()})));
     callback();
   }
-}
+};

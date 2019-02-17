@@ -3,11 +3,11 @@ Winston AMQP transport.
 This transport publish logs to a topic exchange.
 
 ```javascript
-const AMQPTransport = require('winston-amqp');
+const AMQPTransport = require('winston-amqp-transport');
 
 const amqpTransport = new AMQPTransport({
-  uri: 'amqp://localhost',
-  exchangeType: 'topic'
+  url: 'amqp://localhost',
+  exchangeType: 'topic',
   exchange: 'logs',
   routingKey: 'my.company.logs',
 });
